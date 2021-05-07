@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜单栏</title>
+</head>
+<style>
+    ul,
+    li,
+    a {
+        list-style: none;
+        text-decoration: none;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .superMenu {
+        margin: 30px;
+    }
+
+    .superMenu>li {
+        float: left;
+        position: relative;
+    }
+
+    .subUl {
+        display: none;
+    }
+
+    .superMenu>li>a,
+    .subUl>li>a {
+        display: block;
+        width: 120px;
+        height: 40px;
+        background-color: aqua;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    .superMenu>li>a:hover {
+        background-color: #000;
+    }
+
+    .subUl>li>a:hover {
+        background: #DF4B05;
+    }
+
+    .sub:hover .subUl {
+        display: block;
+    }
+</style>
+
+<body>
+    <nav>
+        <ul class="superMenu">
+            <li><a href="http://www.baidu.com">菜单1</a></li>
+            <li><a href="http://www.baidu.com">菜单2</a></li>
+            <li><a href="http://www.baidu.com">菜单3</a></li>
+            <li class="sub">
+                <a href="http://www.baidu.com">菜单4</a>
+                <ul class="subUl">
+                    <li><a href="http://www.baidu.com">子菜单1</a></li>
+                    <li><a href="http://www.baidu.com">子菜单2</a></li>
+                    <li><a href="http://www.baidu.com">子菜单3</a></li>
+                </ul>
+            </li>
+            <li><a href="http://www.baidu.com">菜单5</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
