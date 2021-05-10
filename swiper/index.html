@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .swiper-container {
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .inner {
+            width: 3200px;
+        }
+
+        img {
+            width: 800px;
+            height: 400px;
+            display: block;
+            float: left;
+        }
+
+        .leftAni {
+            animation: leftWidth 12s infinite;
+        }
+
+        @keyframes leftWidth {
+            0% {
+                margin-left: 0;
+            }
+
+            25% {
+                margin-left: -800px;
+            }
+
+            50% {
+                margin-left: -1600px;
+            }
+
+            75% {
+                margin-left: -2400px;
+            }
+
+            100% {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="swiper-container">
+        <div class="inner leftAni">
+            <img src="./01.jpeg" alt="" srcset="">
+            <img src="./02.jpeg" alt="" srcset="">
+            <img src="./03.jpeg" alt="" srcset="">
+            <img src="./04.jpeg" alt="" srcset="">
+        </div>
+    </section>
+</body>
+
+</html>
