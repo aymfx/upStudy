@@ -1,18 +1,22 @@
 <template>
-  <div>
-    <hello-world :sex="1" />
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <Tag tag="span">
+      <Hellow />
+    </Tag>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/Main.vue";
+import Tag from "./components/tag.vue";
+import Hellow from "./components/hellow.vue";
+
 export default {
-  setup() {},
   name: "App",
   components: {
-    HelloWorld,
+    Hellow,
+    Tag,
   },
-  methods: {},
 };
 </script>
 

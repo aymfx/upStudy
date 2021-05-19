@@ -1,16 +1,16 @@
-<template>
-  <div class="hello">
-    
-  </div>
-</template>
-
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "h",
   props: {
-    msg: String
-  }
-}
+    tag: String,
+  },
+  render(h) {
+    return h(
+      this.tag, // 标签名称
+      this.$slots.default // 子节点
+    );
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
