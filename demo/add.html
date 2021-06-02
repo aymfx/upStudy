@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="boxlist">
+        <div class="stairAmountItems" data-num="1">
+            <label class="col-xs-3 col-sm-2 control-label" for="code" style="margin-left: 2%">满</label>
+            <input id="stairGiveAmount" name="stairGiveAmount" style="width: 7%" class="form-control checkbox-inline"
+                type="text" maxlength="10" autocomplete="off" />
+            &nbsp;元送赠品
+            <button id="selectProductButton" style="background-color: #7ec2f3;width: 80px;color: #FFFFFF"
+                class="btn btn-default" type="button">选择商品</button>
+            <button id="delParameterButton" style="background-color: #fc272f;width: 60px;color: #FFFFFF"
+                class="btn btn-default" type="button">删除</button>
+        </div>
+    </div>
+
+    <div class="form-group" id="forAmountId" hidden>
+        <label class="col-xs-3 col-sm-2 control-label" for="code" style="margin-left: 2%">每满</label>
+        <input id="forGiveAmount" name="forGiveAmount" style="width: 7%" class="form-control checkbox-inline"
+            type="text" maxlength="10" autocomplete="off" />
+        &nbsp;元送赠品
+        <button id="selectProductButton" class="btn btn-default" type="button">选择商品</button>
+        <button id="selectProductButton" style="background-color: #0f9ae0;width: 80px;color: #FFFFFF"
+            class="btn btn-default" type="button">选择商品</button>
+    </div>
+
+    <div class="form-group" id="parameter">
+        <div class="col-xs-10 col-xs-offset-2">
+            <button style="background-color: #7ec2f3;width: 60px;color: #FFFFFF" id="addParameterButton"
+                class="btn btn-default" type="button">添加</button>
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $(() => {
+            $('#addParameterButton').on('click', function () {
+                if ($('.stairAmountItems').length >= 5) {
+                    return;
+                }
+                let template = `<div class="stairAmountItems" data-num="1">
+                            <label class="col-xs-3 col-sm-2 control-label" for="code" style="margin-left: 2%">满</label>
+                            <input id="stairGiveAmount" name="stairGiveAmount" style="width: 7%" class="form-control checkbox-inline"
+                                type="text" maxlength="10" autocomplete="off" />
+                            &nbsp;元送赠品
+                            <button id="selectProductButton" style="background-color: #7ec2f3;width: 80px;color: #FFFFFF"
+                                class="btn btn-default" type="button">选择商品</button>
+                            <button id="delParameterButton" style="background-color: #fc272f;width: 60px;color: #FFFFFF"
+                                class="btn btn-default" type="button">删除</button>
+                        </div>`
+                $('.boxlist').append(template)
+
+            })
+            $('.boxlist').on('click', '#delParameterButton', function () {
+                if ($('.stairAmountItems').length > 1) {
+                    $(this).parent('.stairAmountItems').remove()
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
