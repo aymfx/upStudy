@@ -1,17 +1,41 @@
-/* 
-给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素
-说明：
-你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
-示例 1:
-输入: [2,2,1]
-输出: 1
-示例 2:
-输入: [4,1,2,1,2]
-输出: 4
-*/
+function ListNode(val, next) {
+  this.val = val === undefined ? 0 : val;
+  this.next = next === undefined ? null : next;
+}
 
-var singleNumber = function (nums) {
-  return nums.reduce((pre, next) => pre ^ next);
+class NodeList {
+  constructor(val) {
+    this.node = new ListNode(val);
+  }
+  push(val) {
+    let node = this.node;
+    while (node.next != null) {
+      node = node.next;
+    }
+    node.next = new ListNode(val);
+  }
+}
+
+let node = new NodeList(1);
+
+let arr = [2, 3, 4, 5];
+
+for (const iterator of arr) {
+  node.push(iterator);
+}
+
+console.log(node.node);
+
+var reverseList = function (head) {
+  let pre = null;
+  let cur = head;
+  while (cur != null) {
+    let temp = cur.next;
+    cur.next = pre;
+    pre = cur;
+    cur = temp;
+  }
+  return pre;
 };
-let a = singleNumber([4, 1, 2, 1, 2]);
-console.log(a);
+
+reverseList(node.node);

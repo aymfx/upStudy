@@ -1,18 +1,37 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div>{{ age }} {{ age2 }}</div>
+    <button @click="addAge(9)">年龄增加</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import { mapState, mapMutations, mapGetters } from "vuex";
 export default {
   name: "Home",
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      worked: "enginer",
+    };
+  },
+  mounted() {
+    console.log("getAge", this.getAge);
+  },
+  computed: {
+    work() {
+      return this.worked;
+    },
+    ...mapGetters(["getAge"]),
+    ...mapState({
+      age: (state) => state.age,
+      age2: (state) => state.a.age,
+    }),
+  },
+  methods: {
+    ...mapMutations({
+      addAge: "Add_AGE",
+    }),
   },
 };
 </script>
